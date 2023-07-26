@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import  {SearchBar } from './Search';
+import { Link } from 'react-router-dom';
 
 export class MovieClass extends Component {
   constructor(props) {
@@ -35,8 +36,10 @@ export class MovieClass extends Component {
     return (
       <div className="container">
         <div className="row">
-          <h3>Movies</h3>
+          <div className='movie-header'>
+          <h3>Movies Review </h3>
           <SearchBar onSearch={this.handleSearch} />
+         </div>
           {filteredMovies.map((movie) => (
             <div className="col-md-4" key={movie.id}>
               <div className="card movie-card">
@@ -57,6 +60,11 @@ export class MovieClass extends Component {
                   <p className="card-text">
                     <strong>Headline:</strong> {movie.headline}
                   </p>
+                  <p className="card-text">
+                <a href={movie.link.url} target="_blank" rel="noopener noreferrer" className="review-button">
+                  Read Review
+                </a>
+              </p>
                 </div>
               </div>
             </div>
@@ -68,6 +76,17 @@ export class MovieClass extends Component {
 }
 
 
+
+
+
+
+
+
+
+
+// <a href={movie.link.url} target="_blank" rel="noopener noreferrer">
+// {movie.link.url}
+// </a>
 
 // ///////import React, { Component } from 'react';
 // import { SearchBar } from './SearchBar';

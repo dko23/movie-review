@@ -16,6 +16,7 @@ export function SearchBar({ onSearch }) {
         placeholder="Search Movie"
         value={searchMovie}
         onChange={handleInputChange}
+        className='search-movie'
       />
     </div>
   );
